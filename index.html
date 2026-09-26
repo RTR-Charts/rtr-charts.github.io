@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5.0">
+<title>RTRCHARTS — RTR Indicator &amp; RTR Algo Premium Bot</title>
+<meta name="description" content="RTR 3.6.9 Indicator and RTR Algo Premium Bot by RTRCHARTS — automated Forex & Crypto trading tools.">
+<link rel="icon" href="rtrcharts-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-loader" id="pageLoader" aria-label="Loading RTRCHARTS website">
+  <span class="loader-mark"></span>
+  <span>LOADING RTRCHARTS</span>
+</div>
+
+<canvas id="particle-canvas"></canvas>
+<div class="glow-mesh"></div>
+<div class="spark-field"></div>
+
+<!-- ANNOUNCEMENT MARQUEE -->
+<div class="ann-bar">
+  <div class="ann-track">
+    <span>RTR INDICATOR 3.6.9</span><span>•</span>
+    <span>RTRCHARTS</span><span>•</span>
+    <span>ZERO SLIPPAGE EXECUTION</span><span>•</span>
+    <span>HFT ENGINE · 0ms LATENCY</span><span>•</span>
+    <span>LIMITED TIME OFFER</span><span>•</span>
+    <span>RTR INDICATOR 3.6.9</span><span>•</span>
+    <span>RTRCHARTS</span><span>•</span>
+    <span>ZERO SLIPPAGE EXECUTION</span><span>•</span>
+    <span>HFT ENGINE · 0ms LATENCY</span><span>•</span>
+    <span>LIMITED TIME OFFER</span><span>•</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="logo-link">
+      <img src="rtrcharts-logo.png" alt="RTRCHARTS" class="logo-img">
+      <span class="logo-text">RTRCHARTS</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#products" class="nav-link">Features</a>
+      <a href="#results" class="nav-link">Results</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#" class="nav-link" onclick="openFounder();return false;">About Us</a>
+      <div class="mobile-nav-actions">
+        <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="mobile-login">Login</a>
+        <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="btn-gold small">Get Started</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☼</span></button>
+      <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="login-link">Login</a>
+      <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="btn-gold small">Get Started</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="home">
+    <div class="wrap" style="text-align:center;">
+      <p class="hero-kicker reveal">RTR INDICATOR 3.6.9</p>
+      <h1 class="headline center reveal">Read The Market With <span class="y">More Clarity</span></h1>
+      <p class="hero-intro reveal">A structured TradingView workflow for spotting trend direction, planning entries, and managing risk across the markets you trade.</p>
+
+      <div class="why-grid reveal">
+        <div class="why-item"><span class="mark">01</span><div class="why-item-copy"><strong>Clear Buy &amp; Sell Signals</strong><p>Confirmed candle-close signals for a calmer chart workflow.</p></div></div>
+        <div class="why-item"><span class="mark">02</span><div class="why-item-copy"><strong>Multi-Timeframe Trend View</strong><p>See whether the wider trend supports the setup you are watching.</p></div></div>
+        <div class="why-item"><span class="mark">03</span><div class="why-item-copy"><strong>Built-In TP &amp; SL Levels</strong><p>Plan targets and risk before you commit to a trade idea.</p></div></div>
+        <div class="why-item"><span class="mark">04</span><div class="why-item-copy"><strong>Works Across Markets</strong><p>Use the same process across Forex, Crypto, Indices, and Commodities.</p></div></div>
+      </div>
+
+      <div class="chart-carousel reveal">
+        <button class="cc-arrow left" onclick="chartPrev()" aria-label="Previous">‹</button>
+        <div class="cc-viewport">
+          <div class="cc-track" id="ccTrack">
+            <div class="cc-slide cc-image-slide"><img src="result1.jpg" alt="RTRCHARTS indicator performance result" class="hero-result-image"></div>
+            <div class="cc-slide cc-image-slide"><img src="result2.jpg" alt="RTRCHARTS indicator performance result two" class="hero-result-image"></div>
+            <div class="cc-slide cc-image-slide"><img src="result3.jpg" alt="RTRCHARTS indicator performance result three" class="hero-result-image"></div>
+          </div>
+        </div>
+        <button class="cc-arrow right" onclick="chartNext()" aria-label="Next">›</button>
+        <div class="cc-dots">
+          <span class="cc-dot active" onclick="chartGo(0)"></span>
+          <span class="cc-dot" onclick="chartGo(1)"></span>
+          <span class="cc-dot" onclick="chartGo(2)"></span>
+        </div>
+      </div>
+
+      <p class="hero-trust reveal">Built for structured decision-making, not blind signal-following.</p>
+      <p class="subtext center reveal" style="margin:18px auto 0;">Join our Telegram channel to check daily results and market performance.</p>
+      <a href="https://t.me/+v7EnDgsi_fBmYzk1" target="_blank" rel="noopener" class="btn-gold reveal" style="margin-top:16px;">Join Telegram Channel <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- FOUNDER MODAL -->
+  <div class="founder-overlay" id="founderOverlay">
+    <div class="founder-modal">
+      <button class="founder-close" onclick="closeFounder()">✕</button>
+      <div class="founder-modal-head">
+        <div class="founder-modal-avatar"><img src="rtrcharts-logo.png" alt="RTRCHARTS logo"></div>
+        <div>
+          <h3>RAM SHARMA</h3>
+          <p class="fm-sub">THE QUBIT GUY</p>
+          <p class="fm-roles">Quant Researcher | Trading Systems Developer | Financial Technology Enthusiast</p>
+        </div>
+      </div>
+      <p class="fm-bio">With 7+ years of experience in Quantitative Research, Ram Sharma works at the intersection of financial markets, quantitative research, and technology.</p>
+      <ul class="fm-list">
+        <li><span class="mark">✔</span> 7+ Years — Quantitative Research &amp; Trading Systems</li>
+        <li><span class="mark">✔</span> 13+ Tools — Designed &amp; Implemented for Financial Institutions</li>
+        <li><span class="mark">✔</span> Systematic Approach — Research → Testing → Implementation</li>
+        <li><span class="mark">✔</span> Always Learning — Exploring new technologies and solving complex problems</li>
+        <li><span class="mark">✔</span> Current Focus — Developing decision-based LAYA Trading Bot</li>
+      </ul>
+      <blockquote class="fm-quote">"Always happy to help, always curious to learn — and always building what comes next."<br><span>— Ram Sharma, The Qubit Guy</span></blockquote>
+    </div>
+  </div>
+
+  <div class="region-notice-overlay" id="regionNotice" role="dialog" aria-modal="true" aria-labelledby="regionNoticeTitle">
+    <div class="region-notice">
+      <button class="region-notice-close" type="button" onclick="closeRegionNotice()" aria-label="Close notice">✕</button>
+      <div class="region-notice-icon">⌛</div>
+      <p class="eyebrow">RTR PREMIUM ALGO</p>
+      <h3 id="regionNoticeTitle">Coming Soon to Your Region</h3>
+      <p>We are preparing the RTR Premium Algo for availability in your region. Follow our Telegram channel for the launch update.</p>
+      <a class="btn-gold small" href="https://t.me/RTR_chartss" target="_blank" rel="noopener">Follow Updates <span class="arrow">→</span></a>
+    </div>
+  </div>
+
+  <!-- 2. LIVE PRICE MARQUEE -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>TradingView</span><span class="dot">•</span>
+      <span>Upstox</span><span class="dot">•</span>
+      <span class="px">BTC/USD <b class="up">▲ 1.2%</b></span><span class="dot">•</span>
+      <span class="px">Gold <b class="up">▲ 0.8%</b></span><span class="dot">•</span>
+      <span class="px">EUR/USD <b class="down">▼ 0.3%</b></span><span class="dot">•</span>
+      <span class="px">GBP/USD <b class="up">▲ 0.4%</b></span><span class="dot">•</span>
+      <span>TradingView</span><span class="dot">•</span>
+      <span>Upstox</span><span class="dot">•</span>
+      <span class="px">BTC/USD <b class="up">▲ 1.2%</b></span><span class="dot">•</span>
+      <span class="px">Gold <b class="up">▲ 0.8%</b></span><span class="dot">•</span>
+      <span class="px">EUR/USD <b class="down">▼ 0.3%</b></span><span class="dot">•</span>
+      <span class="px">GBP/USD <b class="up">▲ 0.4%</b></span><span class="dot">•</span>
+    </div>
+  </div>
+
+  <!-- 3. WATCH & LEARN -->
+  <section id="results">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow center">WATCH &amp; LEARN</p>
+        <h2>Live Performance &amp; Market Analysis</h2>
+        <p>Check out our latest live trade breakdowns, strategy tutorials, and community results in action.</p>
+      </div>
+      <div class="video-grid reveal">
+        <div class="video-placeholder small result-media"><img src="result1.jpg" alt="RTRCHARTS indicator performance result"><span>Indicator Performance</span></div>
+        <div class="video-placeholder small"><div class="play-btn">▶</div><span>Add video 2</span></div>
+        <div class="video-placeholder small"><div class="play-btn">▶</div><span>Add video 3</span></div>
+      </div>
+      <div class="dots-row reveal"><span class="dot-static active"></span><span class="dot-static"></span><span class="dot-static"></span></div>
+    </div>
+  </section>
+
+  <!-- 4. CHOOSE YOUR PRODUCT -->
+  <section class="product-toggle-sec" id="products">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow center">SIMPLE PROCESS</p>
+        <h2>Choose Your Product</h2>
+      </div>
+      <div class="toggle-pill reveal" data-active="0" id="productTogglePill">
+        <div class="track">
+          <div class="slider"></div>
+          <button class="active" id="prodTabInd" onclick="switchProductTab(0)">RTR Indicator</button>
+          <button id="prodTabAlgo" onclick="showRegionNotice()" aria-label="RTR Premium Algo coming soon to your region">RTR Premium Algo <span class="tab-status">Coming Soon</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PRODUCT #2 — RTR ALGO PREMIUM BOT -->
+  <section class="prod-detail-sec hidden" id="prodAlgo">
+    <div class="wrap">
+      <div class="prod-detail-grid reveal">
+        <div>
+          <div class="pill"><span class="dot"></span> COMING SOON</div>
+          <h2 style="margin-top:16px;">RTR Algo Premium Bot <span class="coming-soon-label">Coming Soon</span></h2>
+          <p class="subtext">TradingView signals convert directly into live MT4/MT5 trades via webhook bridge — no manual clicking.</p>
+          <ul class="feature-checklist">
+            <li><span class="mark">✔</span> 100% Automated Entries/Exits</li>
+            <li><span class="mark">✔</span> Built-in SL, TP, Trailing SL</li>
+            <li><span class="mark">✔</span> Breakeven + ATR/News Filter</li>
+            <li><span class="mark">✔</span> Broker-Agnostic (any MT4/MT5)</li>
+            <li><span class="mark">✔</span> Risk % per trade configurable</li>
+          </ul>
+        </div>
+        <div class="feat-graphic">
+          <svg viewBox="0 0 200 160">
+            <g id="serverStack">
+              <rect x="55" y="24" width="90" height="24" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+              <circle cx="67" cy="36" r="3" fill="#10b981"/>
+              <rect x="55" y="56" width="90" height="24" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+              <circle cx="67" cy="68" r="3" fill="#ffc107"/>
+              <rect x="55" y="88" width="90" height="24" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+              <circle cx="67" cy="100" r="3" fill="#10b981"/>
+            </g>
+            <g stroke="rgba(16,185,129,0.5)" stroke-width="1.4" fill="none" stroke-dasharray="4 3">
+              <path d="M100,112 L100,140 L40,140" id="pathA"/>
+              <path d="M100,112 L100,140 L160,140" id="pathB"/>
+            </g>
+            <circle r="2.6" fill="#10b981"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#pathA"/></animateMotion></circle>
+            <circle r="2.6" fill="#ffc107"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#pathB"/></animateMotion></circle>
+            <circle cx="40" cy="140" r="4" fill="rgba(16,185,129,0.7)"/>
+            <circle cx="160" cy="140" r="4" fill="rgba(255,193,7,0.7)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. WALL OF FAME -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow center">WALL OF FAME</p>
+        <h2>What Our Customers Say</h2>
+        <p>Don't take our word for it — here are genuine snapshots of success stories shared directly by our community.</p>
+      </div>
+      <div class="review-grid reveal">
+        <button class="review-card" type="button" onclick="openReviewImage('REV1.jpg')" aria-label="Open review image 1">
+          <img src="REV1.jpg" alt="Customer review 1">
+        </button>
+        <button class="review-card" type="button" onclick="openReviewImage('REV2.jpg')" aria-label="Open review image 2">
+          <img src="REV2.jpg" alt="Customer review 2">
+        </button>
+        <button class="review-card" type="button" onclick="openReviewImage('REV3.jpg')" aria-label="Open review image 3">
+          <img src="REV3.jpg" alt="Customer review 3">
+        </button>
+        <button class="review-card" type="button" onclick="openReviewImage('REV4.jpg')" aria-label="Open review image 4">
+          <img src="REV4.jpg" alt="Customer review 4">
+        </button>
+        <button class="review-card" type="button" onclick="openReviewImage('REV5.jpg')" aria-label="Open review image 5">
+          <img src="REV5.jpg" alt="Customer review 5">
+        </button>
+      </div>
+      <div class="dots-row reveal"><span class="dot-static active"></span><span class="dot-static"></span><span class="dot-static"></span></div>
+    </div>
+  </section>
+
+  <div class="review-lightbox" id="reviewLightbox" aria-hidden="true">
+    <button class="review-lightbox-close" type="button" onclick="closeReviewImage()" aria-label="Close review image">✕</button>
+    <img id="reviewLightboxImage" src="" alt="Full customer review image">
+  </div>
+
+  <!-- 8. OUR COMMUNITY -->
+  <section class="community-sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Our <span class="y">Community</span></h2>
+        <p class="stats-note" style="color:var(--text-dim);">THE ECOSYSTEM OF SUCCESSFUL TRADERS</p>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-box"><div class="num">14K+</div><div class="lbl">Community Members</div></div>
+        <div class="stat-box"><div class="num">4K+</div><div class="lbl">Premium Members</div></div>
+        <div class="stat-box"><div class="num">4+</div><div class="lbl">Years — Since 2022</div></div>
+        <div class="stat-box"><div class="num">14+</div><div class="lbl">Countries</div></div>
+      </div>
+      <div style="text-align:center;margin-top:32px;" class="reveal">
+        <a href="https://t.me/+v7EnDgsi_fBmYzk1" target="_blank" rel="noopener" class="btn-gold">Join Our Community <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Plans For Every Style Of Trading</h2>
+        <p class="stats-note">All prices are shown in USD ($). INR (₹) amounts are approximate local references for Indian payments.</p>
+      </div>
+
+      <div class="toggle-pill reveal" data-active="0" id="togglePill">
+        <div class="track">
+          <div class="slider"></div>
+          <button class="active" id="tabInd" onclick="switchTab(0)">RTR Indicator Plans</button>
+          <button id="tabAlgo" onclick="showRegionNotice()" aria-label="RTR Algo plans coming soon to your region">RTR Algo Plans <span class="tab-status">Coming Soon</span></button>
+        </div>
+      </div>
+
+      <div class="price-grid reveal" id="priceGrid">
+        <div class="p-card">
+          <div class="tier">Basic Plan</div>
+          <div class="amount" id="p1">$49</div>
+          <div class="dur" id="d1">Access for 6 Months</div>
+          <ul id="pl1">
+            <li class="yes"><span class="mark">✓</span> Buy, sell &amp; sideways market signals</li>
+            <li class="yes"><span class="mark">✓</span> ATR based volatility filters</li>
+            <li class="yes"><span class="mark">✓</span> Multi-timeframe dashboard</li>
+            <li class="yes"><span class="mark">✓</span> CPR settings</li>
+            <li class="no"><span class="mark">×</span> Buy &amp; sell alarm / notification</li>
+            <li class="no"><span class="mark">×</span> Trade entry point</li>
+            <li class="no"><span class="mark">×</span> Stoploss point</li>
+            <li class="no"><span class="mark">×</span> Multiple target points</li>
+            <li class="yes"><span class="mark">✓</span> RTR basic course access</li>
+            <li class="yes"><span class="mark">✓</span> DTC v1.1 works in all markets and timeframes</li>
+            <li class="yes"><span class="mark">✓</span> PDFs of strategy — Basic</li>
+            <li class="yes"><span class="mark">✓</span> Customer support for 6 months</li>
+            <li class="yes"><span class="mark">✓</span> Premium Telegram channel — 6 months</li>
+            <li class="yes"><span class="mark">✓</span> MT4 and MT5 setup files</li>
+          </ul>
+          <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="buy">Buy Now →</a>
+        </div>
+
+        <div class="p-card hft">
+          <div class="ribbon">BEST VALUE</div>
+          <div class="tier" style="color:var(--gold);">Premium Plan</div>
+          <div class="amount" id="p2">$129</div>
+          <div class="dur" id="d2">Access for Lifetime</div>
+          <ul id="pl2">
+            <li class="yes"><span class="mark">✓</span> Buy, sell &amp; sideways market signals</li>
+            <li class="yes"><span class="mark">✓</span> ATR feature</li>
+            <li class="yes"><span class="mark">✓</span> Multi-timeframe dashboard</li>
+            <li class="yes"><span class="mark">✓</span> CPR feature</li>
+            <li class="yes"><span class="mark">✓</span> Buy &amp; sell alarm / notification</li>
+            <li class="yes"><span class="mark">✓</span> Trade entry point</li>
+            <li class="yes"><span class="mark">✓</span> Stoploss point</li>
+            <li class="yes"><span class="mark">✓</span> Multiple target points</li>
+            <li class="yes"><span class="mark">✓</span> RTR premium course access</li>
+            <li class="yes"><span class="mark">✓</span> DTC 1.3.6 works in all markets and timeframes</li>
+            <li class="yes"><span class="mark">✓</span> PDFs of strategy</li>
+            <li class="yes"><span class="mark">✓</span> Customer support for lifetime access</li>
+            <li class="yes"><span class="mark">✓</span> Premium Telegram channel — unlimited subscription</li>
+            <li class="yes"><span class="mark">✓</span> MT4 and MT5 setup files</li>
+          </ul>
+          <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="buy">Buy Now →</a>
+        </div>
+      </div>
+
+      <div class="comparison-wrap reveal">
+        <div class="comparison-head">
+          <div>
+            <p class="eyebrow">PLAN COMPARISON</p>
+            <h3>Compare what is included</h3>
+          </div>
+          <span>All plans include setup guidance</span>
+        </div>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead><tr><th>Included</th><th>Basic</th><th>Premium</th></tr></thead>
+            <tbody>
+              <tr><th>Core signals &amp; dashboard</th><td>Yes</td><td>Yes</td></tr>
+              <tr><th>Course access</th><td>RTR Basic</td><td>RTR Premium</td></tr>
+              <tr><th>Telegram channel</th><td>Not included</td><td>Unlimited</td></tr>
+              <tr><th>Customer support</th><td>Not included</td><td>Lifetime</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pricing-assurance reveal">
+        <div><span class="assurance-icon">$</span><div><strong>USD-first payment</strong><p>International clients can pay by card in USD. INR is shown only as a local reference.</p></div></div>
+        <div><span class="assurance-icon">↗</span><div><strong>Human support</strong><p>Message us on Telegram for plan selection and setup help.</p></div></div>
+        <div><span class="assurance-icon">i</span><div><strong>Refund clarity</strong><p>Confirm refund eligibility with support before completing payment.</p></div></div>
+      </div>
+
+      <div class="trust-badges reveal">
+        <div class="tb"><span>✓</span> Backtested &amp; Documented</div>
+        <div class="tb"><span>✓</span> Zero Slippage Engine</div>
+        <div class="tb"><span>✓</span> Instant Telegram Support</div>
+        <div class="tb"><span>✓</span> MT4/MT5 Native</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Frequently Asked <span class="y">Questions</span></h2>
+        <p>Get quick answers to common queries about our trading products.</p>
+      </div>
+      <div class="toggle-pill reveal" data-active="0" id="faqTogglePill">
+        <div class="track">
+          <div class="slider"></div>
+          <button class="active" id="faqTabInd" onclick="switchFaqTab(0)">Indicator</button>
+          <button id="faqTabAlgo" onclick="showRegionNotice()" aria-label="Algo FAQ coming soon to your region">Algo <span class="tab-status">Coming Soon</span></button>
+        </div>
+      </div>
+
+      <div class="faq-list reveal" id="faqListInd">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">1. What is the RTR Indicator? <span class="faq-toggle">+</span></button><div class="faq-a">The RTR Indicator is a smart, all-in-one trading tool that helps you identify high-probability Buy and Sell opportunities using a unique, non-repainting and non-lagging system. It includes entry, stoploss, and target levels, volatility filters, and much more—all directly on your chart.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">2. What features are included in the RTR Indicator? <span class="faq-toggle">+</span></button><div class="faq-a"><p>Here’s what you get with the full setup:</p><ul style="margin-top:10px; padding-left:18px; color:var(--text-dim); line-height:1.8; font-size:13.5px;">
+          <li>✅ Inbuilt Entry, Stoploss &amp; Target Levels</li>
+          <li>✅ Auto Buy and Sell Alerts (No need to watch charts constantly)</li>
+          <li>✅ Support &amp; Resistance Levels plotted automatically</li>
+          <li>✅ Clear Buy and Sell Signals using color codes</li>
+          <li>✅ ATR-Based Volatility Filter for smarter trade filtering</li>
+          <li>✅ Multi-Timeframe Monitor Dashboard on the chart</li>
+          <li>✅ 85–90% Accuracy, with no repainting or lagging</li>
+          <li>✅ Lifetime Access to the DTC Course</li>
+          <li>✅ Downloadable PDFs explaining the full DTC Strategy</li>
+          <li>✅ Works on All Markets &amp; Time Frames</li>
+        </ul></div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">3. Does the RTR Indicator repaint or lag? <span class="faq-toggle">+</span></button><div class="faq-a">No. The RTR Indicator is 100% non-repainting and non-lagging. The signals you see in real-time stay the same—even after a candle closes.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">4. What types of markets does it work in? <span class="faq-toggle">+</span></button><div class="faq-a"><p>The RTR Indicator is designed to work in all market types, including:</p><ul style="margin-top:10px; padding-left:18px; color:var(--text-dim); line-height:1.8; font-size:13.5px;">
+          <li>• Trending markets</li>
+          <li>• Sideways/consolidating markets (via its volatility filter)</li>
+          <li>• High-volatility events</li>
+        </ul><p style="margin-top:10px;">It’s also effective across all financial instruments, including stocks, forex, crypto, indices, and commodities.</p></div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">5. What platforms support the Indicator? <span class="faq-toggle">+</span></button><div class="faq-a">Typically, the RTR Indicator is available for TradingView, MT5, and MT4 and can be used directly within your charting tool.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">6. What is the accuracy of RTR indicator? <span class="faq-toggle">+</span></button><div class="faq-a">The system has been tested and optimized to provide 85% to 90% accuracy in real market conditions, while minimizing false signals through volatility filtering and strict entry criteria.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">7. Does the RTR Indicator work in all time frames? <span class="faq-toggle">+</span></button><div class="faq-a">Yes, the RTR Indicator is designed to work on all time frames, from 1-minute scalping charts to long-term daily or weekly charts. Whether you're an intraday, swing, or positional trader, RTR adjusts to your trading style.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">8. Is the RTR Indicator suitable for beginners? <span class="faq-toggle">+</span></button><div class="faq-a"><p>Yes! It's perfect for beginners because:</p><ul style="margin-top:10px; padding-left:18px; color:var(--text-dim); line-height:1.8; font-size:13.5px;">
+          <li>• Signals are color-coded and easy to follow</li>
+          <li>• The course explains everything from the basics</li>
+          <li>• You get lifetime support if you have any questions or need help with setup or trading strategy</li>
+        </ul></div></div>
+      </div>
+
+      <div class="faq-list hidden" id="faqListAlgo">
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the RTR Algo Premium Bot? <span class="faq-toggle">+</span></button><div class="faq-a">It is an automated execution system that receives TradingView alerts through a webhook bridge and sends the configured trade instructions to an MT4 or MT5 account.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How does a trade move from TradingView to MT4/MT5? <span class="faq-toggle">+</span></button><div class="faq-a">The flow is: confirmed TradingView alert, secure webhook request, bridge validation, and broker-side order execution. Correct alert settings, account credentials, and an active connection are required.</div></div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I need a VPS to run the bot? <span class="faq-toggle">+</span></button><div class="faq-a">A VPS is recommended for stable 24/7 uptime and low connection interruptions. You can begin without one, but your computer or hosted terminal must remain online whenever automation is expected.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">Which brokers and platforms are supported? <span class="faq-toggle">+</span></button><div class="faq-a">The bot is designed for standard MT4 and MT5 broker environments. Broker symbol names, lot rules, minimum stop distance, and execution settings can vary and should be checked during setup.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">Can I control risk, SL, TP, and trailing logic? <span class="faq-toggle">+</span></button><div class="faq-a">Yes. The setup supports configurable risk per trade along with Stop Loss, Take Profit, Trailing Stop, Breakeven, and optional ATR or news-filter conditions where available.</div></div>
+        <div class="faq-item hidden-faq"><button class="faq-q" onclick="toggleFaq(this)">What should I check if an order is not executed? <span class="faq-toggle">+</span></button><div class="faq-a">Check the TradingView alert status, webhook URL and message format, bridge connection, MT4/MT5 Expert Advisor status, AutoTrading permission, symbol mapping, lot size, and broker rejection logs. Our Telegram team can guide you through troubleshooting.</div></div>
+      </div>
+
+      <div style="text-align:center;margin-top:24px;">
+        <button class="load-more-btn" onclick="loadMoreFaq()">Load More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap reveal" style="text-align:center;">
+      <div class="rocket">🚀</div>
+      <h2>Welcome To The Place Where Traders Grow Together</h2>
+      <p style="color:var(--text-dim);max-width:52ch;margin:14px auto 30px;">Join thousands of successful traders and start your journey to financial freedom today.</p>
+      <a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="btn-gold">Get Started Now <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- 12. CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Contact Our Team</h2>
+        <p>We're here to help — reach out anytime.</p>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="c-card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#33a2e5" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></div>
+          <h4>Telegram</h4><p>@RTR_chartss</p><a href="https://t.me/RTR_chartss" class="chatbtn" target="_blank" rel="noopener">Chat Now</a>
+        </div>
+        <div class="c-card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffc107" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+          <h4>Email</h4><p>rtrcharts@gmail.com</p><a href="mailto:rtrcharts@gmail.com" class="chatbtn">Send Mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 13. LEGAL & TRUST -->
+<section class="legal-section" id="legal">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow center">TRANSPARENCY FIRST</p>
+      <h2>Important Information</h2>
+      <p>Review how RTRCHARTS handles information, access, and trading risk before you purchase.</p>
+    </div>
+    <div class="legal-grid">
+      <details class="legal-card" id="privacy">
+        <summary>Privacy Policy <span>+</span></summary>
+        <p>We use the information you share through Telegram or email only to answer questions, process access, and provide support. We do not sell customer information. Contact us to request an update or deletion of your support details.</p>
+      </details>
+      <details class="legal-card" id="terms">
+        <summary>Terms &amp; Conditions <span>+</span></summary>
+        <p>RTRCHARTS provides software and educational tools. Access is intended for the purchaser, may require compatible third-party platforms, and must not be shared or resold. Customers are responsible for account settings, broker rules, and their own trading decisions.</p>
+      </details>
+      <details class="legal-card" id="risk">
+        <summary>Risk Disclaimer <span>+</span></summary>
+        <p>Forex and cryptocurrency trading involve substantial risk, including loss of capital. Signals, automation, and past results do not guarantee future performance. RTRCHARTS is not a financial adviser; use suitable risk limits and seek independent advice.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FOOTER -->
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="logo-link" style="margin-bottom:0;">
+        <img src="rtrcharts-logo.png" alt="RTRCHARTS" class="logo-img">
+        <span class="logo-text">RTRCHARTS</span>
+      </div>
+      <p class="fdesc">Automated Forex &amp; Crypto execution built on the RTR engine. Fast, simple, and reliable algo trading.</p>
+    </div>
+    <div>
+      <h5>Products</h5>
+      <a href="#prodInd">RTR Indicator</a>
+      <a href="#prodAlgo">RTR Algo Premium Bot</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div>
+      <h5>Legal</h5>
+      <a href="#risk">Risk Disclaimer</a>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms &amp; Conditions</a>
+    </div>
+    <div class="social-footer">
+      <h5>FOLLOW US ON</h5>
+      <div class="social-links" aria-label="RTRCHARTS social media links">
+        <a href="https://www.tiktok.com/@RTR_CHARTS" aria-label="TikTok @RTR_CHARTS" title="TikTok @RTR_CHARTS"><img class="social-logo" src="https://cdn.simpleicons.org/tiktok/ffffff" alt=""></a>
+        <a href="https://www.instagram.com/RTR_CHARTS" aria-label="Instagram @RTR_CHARTS" title="Instagram @RTR_CHARTS"><img class="social-logo" src="https://cdn.simpleicons.org/instagram/E4405F" alt=""></a>
+        <a href="https://www.facebook.com/RTR_CHARTS" aria-label="Facebook @RTR_CHARTS" title="Facebook @RTR_CHARTS"><img class="social-logo" src="https://cdn.simpleicons.org/facebook/1877F2" alt=""></a>
+        <a href="https://www.youtube.com/@RTR_CHARTS" aria-label="YouTube @RTR_CHARTS" title="YouTube @RTR_CHARTS"><img class="social-logo" src="https://cdn.simpleicons.org/youtube/FF0000" alt=""></a>
+        <a href="https://www.linkedin.com/in/RTR_CHARTS" aria-label="LinkedIn @RTR_CHARTS" title="LinkedIn @RTR_CHARTS"><svg class="social-logo social-linkedin-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3H2.1V21h3.1V8.3zM3.7 3A1.8 1.8 0 1 0 3.7 6.6 1.8 1.8 0 0 0 3.7 3zM21.9 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.8h-3.1V21h3.1v-6.3c0-1.7.3-3.3 2.4-3.3 2 0 2 1.9 2 3.4V21h3.1v-7.3z"/></svg></a>
+        <a href="https://www.myfxbook.com/members/RTR_CHARTS" aria-label="FXBook @RTR_CHARTS" title="FXBook @RTR_CHARTS"><svg class="social-logo social-fxbook-logo" viewBox="0 0 40 24" aria-hidden="true"><path d="M3 5h13v3H7v3h7v3H7v7H3V5zm16 0h4.5l2.7 4 2.7-4h4.5l-5 7 5.4 7h-4.6l-3-4.3-3 4.3h-4.6l5.4-7-5-7z"/><path d="M34 5h3v14h-3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="risk-note">Trading involves substantial risk of loss. Past performance is not indicative of future results. RTRCHARTS is a software tool, not financial advice. Trade at your own discretion.</p>
+    <p class="copyright">14K+ Community Members | © 2024 RTRCHARTS. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- TELEGRAM FLOATING BUTTON -->
+<a href="https://t.me/RTR_chartss" target="_blank" rel="noopener" class="tg-fab" aria-label="Chat on Telegram">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
